@@ -48,32 +48,32 @@ http://localhost:8080
 Once connected to the DB, try running:
     
 1. List all students:
-    ```sql 
-    SELECT * FROM students;
-    ```
+```sql 
+SELECT * FROM students;
+```
 
 2. Show students and their enrolled courses:
-    ```sql
-    SELECT s.name, c.title, e.grade
-    FROM enrollments e
-    JOIN students s ON e.student_id = s.id
-    JOIN courses c ON e.course_id = c.id;
-    ```
+```sql
+SELECT s.name, c.title, e.grade
+FROM enrollments e
+JOIN students s ON e.student_id = s.id
+JOIN courses c ON e.course_id = c.id;
+```
 3. Count how many courses each student is taking:
-    ```sql
-    SELECT s.name, COUNT(e.course_id) as course_count
-    FROM enrollments e
-    JOIN students s ON e.student_id = s.id
-    GROUP BY s.name;
-    ```
+```sql
+SELECT s.name, COUNT(e.course_id) as course_count
+FROM enrollments e
+JOIN students s ON e.student_id = s.id
+GROUP BY s.name;
+```
 
 ### Resetting Databases
 To clear and reinitialize data
 
-    ```bash 
-    docker compose down -v
-    docker compose up --build
-    ```
+```bash
+docker compose down -v
+docker compose up --build
+```
 
 ### License
 MIT License: free for educational and demo use.
