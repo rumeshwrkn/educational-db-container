@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: edu_db_postgres
+    environment:
+      POSTGRES_USER: edu_user
+      POSTGRES_PASSWORD: edu_pass
+      POSTGRES_DB: edu_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./init/postgres:/docker-entrypoint-initdb.d
+  mysql:
+    image: mysql:8.0
+    container_name: edu_db_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: edu_user      
+      MYSQL_USER: edu_user
+      MYSQL_PASSWORD: edu_pass
+      MYSQL_DATABASE: edu_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysqldata:/var/lib/mysql
+      - ./init/mysql:/docker-entrypoint-initdb.d
+
+  adminer:
+    image: adminer
+    container_name: edu_adminer
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:
+  mysqldata:
