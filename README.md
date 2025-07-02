@@ -14,7 +14,7 @@ This project is an educational environment to explore SQL using Docker:
 1. **Clone the repo**
 ```bash
 git clone https://github.com/rumeshwrkn/educational-db-container.git
-cd /educational-db-container
+cd educational-db-container
 ```
 
 2. **Start the containers**
