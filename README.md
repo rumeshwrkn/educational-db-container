@@ -1,4 +1,4 @@
-# Educational Database Containers with PostgresSQL & Mysql
+# Educational Database Containers with PostgresSQL & MySQL
 This project is an educational environment to explore SQL using Docker:
 
 - PostgresSQl with preloaded schema and sample data
@@ -11,24 +11,24 @@ This project is an educational environment to explore SQL using Docker:
 
 ## Quick Start
 
-1. **Clone the repo**:
+1. **Clone the repo**
 ```bash
 git clone https://github.com/rumeshwrkn/educational-db-container.git
 cd /educational-db-container
 ```
 
-2. Start the containers:
+2. **Start the containers**
 ```bash
 docker compose up --build
 ```
 
-3. Open Adminer in your browser:
+3. **Open Adminer in your browser**
 ```
 http://localhost:8080
 ```
 
 ### Database credentials
-PostgreSQL
+**PostgreSQL**
 
     System: PostgreSQL
     Server: postgres
@@ -36,7 +36,7 @@ PostgreSQL
     Password: edu_pass
     Database: edu_db
 
-MySQL
+**MySQL**
 
     System: MySQL
     Server: mysql
@@ -68,10 +68,12 @@ Once connected to the DB, try running:
     ```
 
 ### Resetting Databases
-To clear and reinitialize data:
+To clear and reinitialize data
 
+    ```bash 
     docker compose down -v
     docker compose up --build
+    ```
 
 ### License
 MIT License: free for educational and demo use.
